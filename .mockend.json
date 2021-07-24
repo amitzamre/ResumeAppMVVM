@@ -1,7 +1,8 @@
 {
-
-    "name":       "Amit Zamre",
-    "qulification":      "BE",
-    "skills":     "java,angular"
+    "details":{
+         "name":       "Amit Zamre",
+          "qulification":      "BE",
+          "skills":     "java,angular"
+    }
 
 }
