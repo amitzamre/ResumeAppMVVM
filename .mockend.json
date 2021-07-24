@@ -1,7 +1,5 @@
 {
   "Post": {
-    "title": "string": {"test"},
-    "comments": "string": {"test"}
-    }
+    "title": { "string": {"testinng"} },
   }
 }
