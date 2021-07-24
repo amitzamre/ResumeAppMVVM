@@ -10,5 +10,8 @@
     "post": {
       "belongsTo": "Post"
     }
+  },
+  "Details:"{
+      "name":     {"string" :{ "Amit Zamre" }  }
   }
 }
