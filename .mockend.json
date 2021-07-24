@@ -1,8 +1,7 @@
 {
-    "Details":{
-         "name":       "Amit Zamre",
-          "qulification":      "BE",
-          "skills":     "java,angular"
+  "Post": {
+    "title": "test",
+    "comments": "test"
     }
-
+  }
 }
