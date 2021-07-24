@@ -1,6 +1,8 @@
 package com.example.myapplication.hilt
 
+import android.util.Log
 import com.example.myapplication.local.HomeResponseRepo
+import com.example.myapplication.remote.retrofit.BASE_URL
 import com.example.myapplication.remote.retrofit.HomeApi
 import dagger.Module
 import dagger.Provides
@@ -18,13 +20,15 @@ object ResumeModule {
     @Singleton
     fun provideHomeTabDetailApi ():HomeApi{
 
+        Log.d("BASE URL ", "home resposne: ${BASE_URL}")
+        return Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build().create(HomeApi::class.java)
 
-        return Retrofit.Builder().baseUrl("../assets/homeResponse.json").addConverterFactory(GsonConverterFactory.create()).build().create(HomeApi::class.java)
     }
     @Provides
     @Singleton
-    fun provideHomeRepo(homeApi:HomeApi):HomeResponseRepo{
+    fun provideHomeRepo(homeApi:HomeApi):HomeResponseRepo {
         return HomeResponseRepo(homeApi)
-
     }
+
+
 }

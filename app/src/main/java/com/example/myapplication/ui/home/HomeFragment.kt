@@ -1,6 +1,7 @@
 package com.example.myapplication.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -42,17 +43,18 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         homeViewModel.getHomeReposne()
 
+
+        Log.d("Resposne for home", "home resposne: ${homeViewModel.getHomeReposne().toString()}")
         homeViewModel.homeResponse.observe(viewLifecycleOwner){
-            when (it?.getContentIfNotHandled()?.status) {
 
-
-                Status.SUCCESS -> {
-
+                    Log.d("Resposne for home- name", "home resposne: ${it.peekContent().data?.name}")
                     binding.textHome.text = it.peekContent().data?.name
-                }
+                    binding.textQualification.text=it.peekContent().data?.qulification
+                    binding.textSkills.text=it.peekContent().data?.skills
 
 
-            }
+
+
         }
     }
     override fun onDestroyView() {

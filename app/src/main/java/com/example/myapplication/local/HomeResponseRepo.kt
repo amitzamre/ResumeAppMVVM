@@ -9,7 +9,7 @@ class HomeResponseRepo (private val homeApi: HomeApi) {
 
     suspend fun getHomeTabResponse():Result<HomeResponse>{
         return try {
-            val response = homeApi.getHomeTabDeatils()
+            val response = homeApi.getHomeTabDeatils("application/json", "9076c833-3ae9-44f8-9db3-2259fb4bd437/")
             return Result(Status.SUCCESS, response.body(), null)
 
         } catch (e: Exception) {

@@ -5,4 +5,5 @@
     <string name="title_skills">Skills</string>
     <string name="title_projects">Projects</string>
     <string name="title_moreDetails">More</string>
+    <string name="name">Name</string>
 </resources>
