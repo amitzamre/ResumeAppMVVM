@@ -7,91 +7,142 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.home.HomeFragment">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".ui.home.HomeFragment">
+
+                <TextView
+                    android:id="@+id/text_home"
+                    android:layout_width="120dp"
+                    android:layout_height="81dp"
+                    android:layout_marginStart="50dp"
+                    android:textColor="@color/black"
+                    android:textSize="34sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/imageView2"
+                    app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/avatar_1"
+                    tools:layout_editor_absoluteX="13dp"
+                    tools:layout_editor_absoluteY="15dp" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="350dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="27dp"
+                    android:layout_marginTop="50dp"
+                    app:cardBackgroundColor="@android:color/holo_blue_light"
+                    app:cardCornerRadius="15dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView2">
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="118dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:rotationX="12"
+                        android:text="Qualification"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/text_qualification"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView3"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="40dp"
+                        android:text="TextView" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView2"
+                    android:layout_width="350dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="27dp"
+                    android:layout_marginTop="50dp"
+                    app:cardBackgroundColor="@android:color/holo_blue_light"
+                    app:cardCornerRadius="15dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+                    <TextView
+                        android:id="@+id/skillHeading"
+                        android:layout_width="118dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:rotationX="12"
+                        android:text="Skills"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/text_skills"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView3"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="40dp"
+                        android:text="TextView" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView3"
+                    android:layout_width="350dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="27dp"
+                    android:layout_marginTop="50dp"
+                    app:cardBackgroundColor="@android:color/holo_blue_light"
+                    app:cardCornerRadius="15dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardView2">
+
+                    <TextView
+                        android:id="@+id/contact_deatils"
+                        android:layout_width="118dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Contact Details"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/email_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/contact_deatils"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="40dp"
+                        android:text="test.test@gmail.com"/>
+
+                    <TextView
+                        android:id="@+id/mobile_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/email_id"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="65dp"
+                        android:text="0123456789" />
+
+                </androidx.cardview.widget.CardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        <TextView
-            android:id="@+id/text_home"
-            android:layout_width="120dp"
-            android:layout_height="81dp"
-            android:layout_marginStart="50dp"
-            android:textColor="@color/black"
-            android:textSize="34sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/imageView2"
-            app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        </ScrollView>
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/avatar_1"
-            tools:layout_editor_absoluteX="13dp"
-            tools:layout_editor_absoluteY="15dp" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView"
-            android:layout_width="350dp"
-            android:layout_height="100dp"
-            android:layout_marginStart="27dp"
-            android:layout_marginTop="50dp"
-            app:cardBackgroundColor="@android:color/holo_blue_light"
-            app:cardCornerRadius="15dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2">
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="118dp"
-                android:layout_marginLeft="10dp"
-                android:layout_height="wrap_content"
-                android:rotationX="12"
-                android:text="Qualification"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/text_qualification"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/textView3"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="40dp"
-                android:text="TextView" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="350dp"
-            android:layout_height="100dp"
-            android:layout_marginStart="27dp"
-            android:layout_marginTop="50dp"
-            app:cardBackgroundColor="@android:color/holo_blue_light"
-            app:cardCornerRadius="15dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView">
-
-            <TextView
-                android:id="@+id/skillHeading"
-                android:layout_width="118dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:rotationX="12"
-                android:text="Skills"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/text_skills"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/textView3"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="40dp"
-                android:text="TextView" />
-        </androidx.cardview.widget.CardView>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
