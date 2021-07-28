@@ -1,6 +1,7 @@
 package com.example.myapplication.ui.skill
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,11 +33,13 @@ class SkillFragment : Fragment() {
         _binding = FragmentSkillBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
-        skillViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+
         return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        skillViewModel.getSkillResponse()
+        Log.d("Skill response","${skillViewModel.getSkillResponse().toString()}")
     }
 
     override fun onDestroyView() {
