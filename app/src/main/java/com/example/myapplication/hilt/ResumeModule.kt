@@ -2,11 +2,9 @@ package com.example.myapplication.hilt
 
 import android.util.Log
 import com.example.myapplication.local.home.HomeResponseRepo
+import com.example.myapplication.local.projects.ProjectResponseRepo
 import com.example.myapplication.local.skills.SkillResponseRepo
-import com.example.myapplication.remote.retrofit.BASE_URL
-import com.example.myapplication.remote.retrofit.BASE_URL_SKILL
-import com.example.myapplication.remote.retrofit.HomeApi
-import com.example.myapplication.remote.retrofit.SkillsApi
+import com.example.myapplication.remote.retrofit.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -42,6 +40,14 @@ object ResumeModule {
     fun provideSkillRepo(skillApi:SkillsApi):SkillResponseRepo{
         return SkillResponseRepo(skillApi)
     }
-
-
+    @Provides
+    @Singleton
+    fun provideProjectDetailsApi(): ProjectDetailsApi{
+        return Retrofit.Builder().baseUrl(BASE_URL_PROJ_DEATAILS).addConverterFactory(GsonConverterFactory.create()).build().create(ProjectDetailsApi::class.java)
+    }
+    @Provides
+    @Singleton
+    fun provideProjectDetailsRepo(projectDetailsApi:ProjectDetailsApi):ProjectResponseRepo{
+        return ProjectResponseRepo(projectDetailsApi)
+    }
 }

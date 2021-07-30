@@ -32,10 +32,7 @@ class ProjectFragment : Fragment() {
         _binding = FragmentProjectBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textNotifications
-        projectViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+
         return root
     }
 
