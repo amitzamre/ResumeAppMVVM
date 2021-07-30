@@ -1,6 +1,6 @@
 package com.example.myapplication.remote.retrofit
 
-import com.example.myapplication.local.HomeResponse
+import com.example.myapplication.local.home.HomeResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Header

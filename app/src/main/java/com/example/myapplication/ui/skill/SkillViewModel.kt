@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.myapplication.local.HomeResponse
 import com.example.myapplication.local.skills.SkillResponse
 import com.example.myapplication.local.skills.SkillResponseRepo
 import com.example.myapplication.util.Events

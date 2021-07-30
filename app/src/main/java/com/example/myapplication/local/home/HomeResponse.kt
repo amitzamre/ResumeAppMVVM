@@ -1,4 +1,4 @@
-package com.example.myapplication.local
+package com.example.myapplication.local.home
 
 data class HomeResponse(
     val name: String,

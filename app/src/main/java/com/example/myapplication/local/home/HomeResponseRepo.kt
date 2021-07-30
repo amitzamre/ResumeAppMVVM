@@ -1,4 +1,4 @@
-package com.example.myapplication.local
+package com.example.myapplication.local.home
 
 import android.util.Log
 import com.example.myapplication.remote.retrofit.HomeApi
