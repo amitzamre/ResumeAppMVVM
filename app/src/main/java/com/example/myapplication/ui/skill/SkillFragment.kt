@@ -9,7 +9,9 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.databinding.FragmentSkillBinding
+import com.example.myapplication.local.skills.Skill
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -39,7 +41,17 @@ class SkillFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         skillViewModel.getSkillResponse()
-        Log.d("Skill response","${skillViewModel.getSkillResponse().toString()}")
+        Log.d("Skill response","${skillViewModel.getSkillResponse()}")
+        skillViewModel.skillResponse.observe(viewLifecycleOwner){
+                val skillList:List<Skill> ?=it.peekContent().data?.skills
+                Log.d("skill list","${skillList}")
+                if(null!=skillList){
+                    binding.skillsList.adapter=SkillListAdapter(skillList)
+                    binding.skillsList.layoutManager= LinearLayoutManager(this.context,LinearLayoutManager.VERTICAL,false)
+                    binding.skillsList.setHasFixedSize(true)
+                }
+
+        }
     }
 
     override fun onDestroyView() {

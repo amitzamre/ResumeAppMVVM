@@ -22,5 +22,6 @@ class SkillViewModel @Inject constructor(private val repo:SkillResponseRepo) : V
     fun getSkillResponse()=viewModelScope.launch {
 
         _skillResponse.postValue(Events(repo.getSkillTabResponse()))
+
     }
 }

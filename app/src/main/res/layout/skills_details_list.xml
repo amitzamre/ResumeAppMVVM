@@ -14,7 +14,7 @@
             app:cardCornerRadius="15dp">
 
             <TextView
-                android:id="@+id/skill_name"
+                android:id="@+id/skill_details"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -22,10 +22,10 @@
                 android:text="TextView" />
 
             <RatingBar
-                android:id="@+id/ratingBar"
+                android:id="@+id/skillRatingBar"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:layout_below="@id/skill_name"
+                android:layout_below="@id/skill_details"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="35dp" />
 
