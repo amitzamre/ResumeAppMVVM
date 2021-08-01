@@ -16,8 +16,8 @@ class ProjectDetailsListAdapter(private val projectList:List<Project>) :Recycler
     class ProjectDetailsViewHolder(itemView:View):RecyclerView.ViewHolder(itemView){
         val projectName: TextView =itemView.findViewById(R.id.project_title)
         val decription: TextView=itemView.findViewById(R.id.decription)
-        val duration: TextView=itemView.findViewById(R.id.duration)
-        val role: TextView=itemView.findViewById(R.id.role)
+        val teamSize: TextView=itemView.findViewById(R.id.team_size)
+        val techStack: TextView=itemView.findViewById(R.id.tech_stack)
         val expandableLayout: ConstraintLayout = itemView.findViewById(R.id.expandableLayout)
 
     }
@@ -75,8 +75,8 @@ class ProjectDetailsListAdapter(private val projectList:List<Project>) :Recycler
             val currentItem=projectList[position]
             holder.projectName.text=currentItem.projectName
             holder.decription.text=currentItem.decription
-            holder.duration.text=currentItem.duration
-            holder.role.text=currentItem.role
+            holder.teamSize.text=currentItem.teamSize
+            holder.techStack.text=currentItem.techStack
             val isExpanded: Boolean = currentItem.isExpanded
             holder.expandableLayout.visibility = if (isExpanded) VISIBLE else GONE
             holder.projectName.setOnClickListener {

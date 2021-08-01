@@ -2,6 +2,7 @@ package com.example.myapplication.hilt
 
 import android.util.Log
 import com.example.myapplication.local.home.HomeResponseRepo
+import com.example.myapplication.local.moreDetails.MoreDetailsResponseRepo
 import com.example.myapplication.local.projects.ProjectResponseRepo
 import com.example.myapplication.local.skills.SkillResponseRepo
 import com.example.myapplication.remote.retrofit.*
@@ -49,5 +50,15 @@ object ResumeModule {
     @Singleton
     fun provideProjectDetailsRepo(projectDetailsApi:ProjectDetailsApi):ProjectResponseRepo{
         return ProjectResponseRepo(projectDetailsApi)
+    }
+    @Provides
+    @Singleton
+    fun provideMoreDetailsApi():MoreDetailsApi{
+        return Retrofit.Builder().baseUrl(BASE_URL_MOREDEATILS).addConverterFactory(GsonConverterFactory.create()).build().create(MoreDetailsApi::class.java)
+    }
+    @Provides
+    @Singleton
+    fun provideMoreDetailsRepo(moreDeatislApi:MoreDetailsApi):MoreDetailsResponseRepo{
+        return MoreDetailsResponseRepo(moreDeatislApi)
     }
 }

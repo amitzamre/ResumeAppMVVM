@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
@@ -33,17 +34,20 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     android:background="?attr/selectableItemBackground" />
+
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/expandableLayout"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/project_title">
+
                     <TextView
-                        android:id="@+id/duration"
+                        android:id="@+id/team_size"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -54,7 +58,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/role"
+                        android:id="@+id/tech_stack"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
@@ -71,8 +75,8 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginLeft="16dp"
                         android:text="Team size:"
-                        android:textStyle="bold"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -83,9 +87,9 @@
                         android:layout_marginEnd="8dp"
                         android:layout_marginRight="8dp"
                         android:text="Tech Stack:"
-                        android:textStyle="bold"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                        app:layout_constraintEnd_toStartOf="@+id/role"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@+id/tech_stack"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
@@ -105,16 +109,29 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
-                        android:layout_marginLeft="16dp"
                         android:layout_marginTop="4dp"
                         android:layout_marginEnd="16dp"
-                        android:layout_marginRight="16dp"
                         android:layout_marginBottom="16dp"
                         android:text="TextView"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/decription_label" />
+                        app:layout_constraintTop_toBottomOf="@+id/decription_label"
+                        app:layout_constraintVertical_bias="1.0" />
+
+                    <TextView
+                        android:id="@+id/roles_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="19dp"
+                        android:layout_below="@+id/decription"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Role "
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/decription"></TextView>
+
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>

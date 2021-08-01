@@ -1,6 +1,7 @@
 package com.example.myapplication.ui.moreDetails
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,11 +33,20 @@ class MoreDeatilsFragment : Fragment() {
         _binding = FragmentMoredetailsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textMoreDeatils
-        moreDetailsViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+
         return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        moreDetailsViewModel.getMoreDetailsResponse()
+        moreDetailsViewModel.moreDetailsResponse.observe(viewLifecycleOwner){
+               Log.d("MORE_DETAILS","MORE DETAILS RESPONSE ${it.peekContent().data?.certification}")
+                binding.certification.text=it.peekContent().data?.certification
+                binding.addLink.text=it.peekContent().data?.addtionalLinks
+                binding.recomandtion.text=it.peekContent().data?.recommendation
+                binding.email.text=it.peekContent().data?.email
+                binding.mobilenum.text=it.peekContent().data?.mobile
+        }
     }
 
     override fun onDestroyView() {
