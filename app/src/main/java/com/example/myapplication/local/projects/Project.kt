@@ -7,5 +7,6 @@ data class Project(
     val role: String,
     val teamSize: String,
     val techStack: String,
-    val toolsUsed: String
+    val toolsUsed: String,
+    var isExpanded :Boolean = false
 )
