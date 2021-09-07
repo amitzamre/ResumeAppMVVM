@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.myapplication.local.home.DefaultHomeResponseRepo
 import com.example.myapplication.local.home.HomeResponse
 import com.example.myapplication.local.home.HomeResponseRepo
 import com.example.myapplication.util.Events
@@ -14,7 +15,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(private val repo: HomeResponseRepo): ViewModel() {
+class HomeViewModel @Inject constructor(private val repo: DefaultHomeResponseRepo): ViewModel() {
 
 
     //private  val _homeResponse=MutableLiveData<Events<Result<HomeResponse>>>()

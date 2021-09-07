@@ -1,6 +1,7 @@
 package com.example.myapplication.hilt
 
 import android.util.Log
+import com.example.myapplication.local.home.DefaultHomeResponseRepo
 import com.example.myapplication.local.home.HomeResponseRepo
 import com.example.myapplication.local.moreDetails.MoreDetailsResponseRepo
 import com.example.myapplication.local.projects.ProjectResponseRepo
@@ -27,7 +28,7 @@ object ResumeModule {
     }
     @Provides
     @Singleton
-    fun provideHomeRepo(homeApi:HomeApi): HomeResponseRepo {
+    fun provideHomeRepo(homeApi:HomeApi): DefaultHomeResponseRepo {
         return HomeResponseRepo(homeApi)
     }
     @Provides

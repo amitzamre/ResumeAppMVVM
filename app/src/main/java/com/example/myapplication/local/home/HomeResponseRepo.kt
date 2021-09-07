@@ -5,9 +5,9 @@ import com.example.myapplication.remote.retrofit.HomeApi
 import com.example.myapplication.util.Result
 import com.example.myapplication.util.Status
 
-class HomeResponseRepo (private val homeApi: HomeApi) {
+class HomeResponseRepo (private val homeApi: HomeApi) :DefaultHomeResponseRepo{
 
-    suspend fun getHomeTabResponse():Result<HomeResponse>{
+   override suspend fun getHomeTabResponse():Result<HomeResponse>{
         return try {
             val response = homeApi.getHomeTabDeatils("application/json", "9076c833-3ae9-44f8-9db3-2259fb4bd437/")
             return Result(Status.SUCCESS, response.body(), null)
